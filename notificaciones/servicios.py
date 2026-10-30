@@ -11,3 +11,7 @@ class NotificacionSMS(Notificacion):
 class NotificacionPush(Notificacion):
     def enviar(self, mensaje: str, destinatario: str) -> None:
         print(f"[PUSH] Enviando a {destinatario}: '{mensaje}'")
+
+class NotificacionTelegram(Notificacion):
+    def enviar(self, mensaje: str, destinatario: str) -> None:
+        print(f"[TELEGRAM] Enviando a {destinatario}: '{mensaje}'")

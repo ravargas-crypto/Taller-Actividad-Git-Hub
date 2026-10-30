@@ -1,5 +1,5 @@
 from .base import Notificacion
-from .servicios import NotificacionEmail, NotificacionSMS, NotificacionPush
+from .servicios import NotificacionEmail, NotificacionSMS, NotificacionPush, NotificacionTelegram
 
 class NotificacionFactory:
     @staticmethod
@@ -12,5 +12,7 @@ class NotificacionFactory:
             return NotificacionSMS()
         elif tipo_normalizado == "push":
             return NotificacionPush()
+        elif tipo_normalizado == "telegram":
+            return NotificacionTelegram()
         else:
             raise ValueError(f"Tipo de notificacion desconocido: '{tipo}'")

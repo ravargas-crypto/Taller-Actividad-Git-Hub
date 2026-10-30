@@ -1,4 +1,5 @@
 from .base import Notificacion
+from .servicios import NotificacionEmail, NotificacionSMS, NotificacionPush, NotificacionTelegram
 from .servicios import NotificacionEmail, NotificacionSMS, NotificacionPush
 from .whatsapp import NotificacionWhatsApp
 
@@ -13,6 +14,8 @@ class NotificacionFactory:
             return NotificacionSMS()
         elif tipo_normalizado == "push":
             return NotificacionPush()
+        elif tipo_normalizado == "telegram":
+            return NotificacionTelegram()
         elif tipo_normalizado == "whatsapp":
             return NotificacionWhatsApp()
         else:
